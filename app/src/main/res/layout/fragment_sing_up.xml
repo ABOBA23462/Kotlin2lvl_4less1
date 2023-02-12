@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    tools:context=".ui.fragments.singup.SingUpFragment">
+
+    <ImageView
+        android:id="@+id/iv_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp"
+        android:contentDescription="@string/code"
+        android:src="@drawable/notes1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_note"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:text="Регистрация по номеру"
+        android:textColor="@color/light_grey" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_num"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_centerInParent="true"
+        android:backgroundTint="@color/grey"
+        app:cardCornerRadius="10dp"
+        app:strokeColor="@color/dark_grey"
+        app:strokeWidth="1dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="53dp"
+            android:autofillHints=""
+            android:hint="@string/number"
+            android:inputType="text"
+            android:textColor="@color/light_grey2"
+            android:textColorHint="#B1B1B1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="18dp"
+            android:contentDescription="@string/telephone"
+            android:src="@drawable/telephone" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_code"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_below="@id/cv_num"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/grey"
+        app:cardCornerRadius="10dp"
+        app:strokeColor="@color/dark_grey"
+        app:strokeWidth="1dp"
+        tools:ignore="ExtraText">
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="53dp"
+            android:autofillHints=""
+            android:hint="@string/yourcode"
+            android:inputType="text"
+            android:textColor="@color/light_grey2"
+            android:textColorHint="#B1B1B1"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="18dp"
+            android:contentDescription="@string/code"
+            android:src="@drawable/shape"
+            tools:ignore="ImageContrastCheck" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_getcode"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_below="@id/cv_code"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/orange"
+        android:text="@string/get_code"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="30dp"
+        tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_getcode"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="@string/send_again"
+        android:textColor="@color/orange" />
+
+
+</RelativeLayout>

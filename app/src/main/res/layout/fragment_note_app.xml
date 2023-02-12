@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/grey"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.home.NoteAppFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/search_bar_text_view"
+        android:layout_marginTop="11dp"
+        android:layout_alignParentBottom="true"/>
+
+    <com.google.android.material.card.MaterialCardView
+    android:id="@+id/cv_actionbar"
+    android:layout_width="match_parent"
+    app:strokeWidth="1dp"
+    app:strokeColor="@color/black"
+    android:backgroundTint="@color/dark_grey2"
+    android:layout_height="50dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:text="@string/заметки"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/menu"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="20dp"
+        android:contentDescription="@string/menu" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/shape1"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="@string/menu2" />
+    
+</com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/search_bar_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/black"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="28dp"
+        app:cardCornerRadius="20dp"
+        android:backgroundTint="@color/dark_grey2"
+        android:layout_below="@id/cv_actionbar">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="44dp"
+            android:autofillHints=""
+            android:hint="@string/search"
+            android:inputType="text"
+            android:textColor="#505050"
+            android:textColorHint="#505050"
+            android:textSize="12sp"
+            tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,TextContrastCheck,VisualLintTextFieldSize" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:contentDescription="@string/search"
+            android:src="@drawable/glass"
+            tools:ignore="ImageContrastCheck,VisualLintBounds" />
+    </com.google.android.material.card.MaterialCardView>
+
+    <ImageButton
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/rounder"
+        android:contentDescription="@string/add"
+        android:src="@drawable/plus" />
+
+</RelativeLayout>
