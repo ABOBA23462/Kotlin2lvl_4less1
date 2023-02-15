@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
+    android:background="@color/dark_grey2"
     tools:context=".ui.fragments.singup.SingUpFragment">
 
     <ImageView
@@ -22,17 +22,17 @@
         android:layout_below="@id/iv_note"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp"
-        android:text="Регистрация по номеру"
-        android:textColor="@color/light_grey" />
+        android:text="@string/register_for_number"
+        android:textColor="@color/light_grey2" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_num"
         android:layout_width="300dp"
         android:layout_height="45dp"
         android:layout_centerInParent="true"
-        android:backgroundTint="@color/grey"
+        android:backgroundTint="@color/transparent"
         app:cardCornerRadius="10dp"
-        app:strokeColor="@color/dark_grey"
+        app:strokeColor="@color/light_grey3"
         app:strokeWidth="1dp">
 
         <EditText
@@ -40,11 +40,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="53dp"
             android:autofillHints=""
+            android:backgroundTint="@color/transparent"
             android:hint="@string/number"
             android:inputType="text"
-            android:textColor="@color/light_grey2"
+            android:textColor="@color/light_grey1"
             android:textColorHint="#B1B1B1"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -62,9 +63,9 @@
         android:layout_below="@id/cv_num"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
-        android:backgroundTint="@color/grey"
+        android:backgroundTint="@color/transparent"
         app:cardCornerRadius="10dp"
-        app:strokeColor="@color/dark_grey"
+        app:strokeColor="@color/light_grey3"
         app:strokeWidth="1dp"
         tools:ignore="ExtraText">
         >
@@ -76,9 +77,10 @@
             android:autofillHints=""
             android:hint="@string/yourcode"
             android:inputType="text"
-            android:textColor="@color/light_grey2"
+            android:backgroundTint="@color/transparent"
+            android:textColor="@color/light_grey1"
             android:textColorHint="#B1B1B1"
-            tools:ignore="TouchTargetSizeCheck" />
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />
 
         <ImageView
             android:layout_width="wrap_content"

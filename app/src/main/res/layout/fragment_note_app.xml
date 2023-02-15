@@ -3,13 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/grey"
+    android:background="@color/dark_grey2"
     android:layout_height="match_parent"
     tools:context=".ui.fragments.home.NoteAppFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/note_rec_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/search_bar_text_view"
         android:layout_marginTop="11dp"
         android:layout_alignParentBottom="true"/>
@@ -19,7 +20,7 @@
     android:layout_width="match_parent"
     app:strokeWidth="1dp"
     app:strokeColor="@color/black"
-    android:backgroundTint="@color/dark_grey2"
+    android:backgroundTint="@color/dark_grey1"
     android:layout_height="50dp">
 
     <TextView
@@ -31,6 +32,7 @@
         android:text="@string/заметки"/>
 
     <ImageView
+        android:id="@+id/menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/menu"
@@ -51,26 +53,27 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/search_bar_text_view"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         app:strokeWidth="1dp"
         app:strokeColor="@color/black"
         android:layout_marginTop="16dp"
         android:layout_marginHorizontal="28dp"
-        app:cardCornerRadius="20dp"
-        android:backgroundTint="@color/dark_grey2"
+        app:cardCornerRadius="25dp"
+        android:backgroundTint="@color/dark_grey1"
         android:layout_below="@id/cv_actionbar">
 
         <EditText
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginStart="44dp"
             android:autofillHints=""
-            android:hint="@string/search"
+            android:backgroundTint="@color/transparent"
+            android:hint="@string/searchnotes"
             android:inputType="text"
-            android:textColor="#505050"
-            android:textColorHint="#505050"
+            android:textColor="@color/white"
+            android:textColorHint="@color/light_grey4"
             android:textSize="12sp"
-            tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck,TextContrastCheck,VisualLintTextFieldSize" />
+            tools:ignore="TextContrastCheck" />
 
         <ImageView
             android:layout_width="wrap_content"
@@ -79,10 +82,11 @@
             android:layout_marginStart="20dp"
             android:contentDescription="@string/search"
             android:src="@drawable/glass"
-            tools:ignore="ImageContrastCheck,VisualLintBounds" />
+            tools:ignore="ImageContrastCheck" />
     </com.google.android.material.card.MaterialCardView>
 
     <ImageButton
+        android:id="@+id/btn_add"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_alignParentEnd="true"

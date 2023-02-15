@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/grey"
-    tools:context=".ui.fragments.detail.NoteDetailFragment">
+    android:background="@color/dark_grey2"
+    tools:context=".ui.fragments.home.detail.NoteDetailFragment">
 
     <ImageView
         android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/arrow"
         android:layout_marginStart="19dp"
         android:layout_marginTop="22dp"
-        android:contentDescription="@string/back" />
+        android:contentDescription="@string/back"
+        android:src="@drawable/arrow" />
 
     <TextView
         android:id="@+id/date"
@@ -22,21 +22,61 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="13dp"
         android:layout_marginTop="20dp"
-        android:textSize="14sp"
         android:layout_toEndOf="@+id/back"
         android:text="@string/date"
         android:textColor="@color/white"
+        android:textSize="14sp"
         android:textStyle="bold" />
 
     <TextClock
+        android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="9dp"
         android:layout_marginTop="20dp"
         android:layout_toEndOf="@+id/date"
         android:text="@string/time"
+        android:textColor="@color/light"
         android:textSize="14sp"
         tools:ignore="TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/btn_ready"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="24dp"
+        android:text="Готово"
+        android:textColor="@color/orange"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/detail_title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/back"
+        android:layout_alignStart="@id/back"
+        android:layout_marginTop="23dp"
+        android:backgroundTint="@color/transparent"
+        android:hint="Заголовок"
+        android:textColor="@color/white"
+        android:textColorHint="@color/light_grey1"
+        android:textSize="16sp"
+        tools:ignore="DuplicateClickableBoundsCheck" />
+
+    <EditText
+        android:id="@+id/detail_description"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/detail_title"
+        android:layout_alignStart="@id/detail_title"
+        android:backgroundTint="@color/transparent"
+        android:hint="Начните ввод"
+        android:textColor="@color/white"
+        android:textColorHint="@color/light_grey1"
+        android:textSize="12sp" />
+
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_one"
@@ -45,7 +85,7 @@
         android:layout_alignBottom="@+id/cv_two"
         android:layout_marginEnd="30dp"
         android:layout_toStartOf="@+id/cv_two"
-        android:backgroundTint="@color/dark_grey2"
+        android:backgroundTint="@color/dark_grey1"
         app:cardCornerRadius="16dp" />
 
     <com.google.android.material.card.MaterialCardView
@@ -53,10 +93,10 @@
         android:layout_width="80dp"
         android:layout_height="45dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="30dp"
-        app:cardCornerRadius="16dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="34dp"/>
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="34dp"
+        app:cardCornerRadius="16dp" />
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_third"
@@ -68,5 +108,19 @@
         android:backgroundTint="@color/scarlet"
         app:cardCornerRadius="16dp" />
 
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dots_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cv_one"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        app:dotsColor="@color/white"
+        app:dotsCornerRadius="8dp"
+        app:dotsSize="14dp"
+        app:dotsSpacing="60dp"
+        app:dotsWidthFactor="2.5"
+        app:progressMode="false"
+        app:selectedDotColor="@color/orange" />
 
 </RelativeLayout>

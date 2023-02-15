@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
+import com.example.kotlin2lvl_2less.R
 import com.example.kotlin2lvl_2less.databinding.FragmentOnBoardBinding
 import com.example.kotlin2lvl_2less.ui.adapter.OnBoardViewPagerAdapter
 import com.example.kotlin2lvl_2less.utils.PreferenceHelper
@@ -45,7 +46,7 @@ class OnBoardFragment : Fragment() {
             val preferenceHelper = PreferenceHelper()
             preferenceHelper.unit(requireContext())
             preferenceHelper.onSaveOnBoardState = false
-            findNavController().navigate(OnBoardFragmentDirections.actionOnBoardFragmentToNoteAppFragment())
+            findNavController().navigate(R.id.action_onBoardFragment_to_noteAppFragment)
         }
         viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {

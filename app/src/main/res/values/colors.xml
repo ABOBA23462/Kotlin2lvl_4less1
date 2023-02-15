@@ -8,10 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="orange">#D88B02</color>
-    <color name="grey">#302D2D</color>
-    <color name="light_grey">#8E8B8B</color>
-    <color name="dark_grey">#6C6B6B</color>
-    <color name="light_grey2">#B1B1B1</color>
-    <color name="dark_grey2">#191818</color>
+    <color name="dark_grey1">#191818</color>
+    <color name="dark_grey2">#0E0C0C</color>
+    <color name="light_grey1">#B1B1B1</color>
+    <color name="light_grey2">#8E8B8B</color>
+    <color name="light_grey3">#6C6B6B</color>
+    <color name="light">#E6E6E6</color>
+    <color name="light_grey4">#505050</color>
     <color name="scarlet">#571818</color>
+    <color name="transperent">#00000000</color>
 </resources>

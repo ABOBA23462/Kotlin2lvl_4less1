@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginHorizontal="20dp"
     android:layout_marginVertical="8dp"
-    android:background="@color/dark_grey2">
+    android:background="@color/dark_grey1">
 
     <TextView
         android:id="@+id/text"
@@ -14,7 +14,7 @@
         android:text="@string/text"
         android:textColor="@color/white"
         android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

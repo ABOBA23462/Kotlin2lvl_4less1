@@ -15,9 +15,12 @@
     <string name="заметки">Заметки</string>
     <string name="menu">menu</string>
     <string name="menu2">menu2</string>
-    <string name="search">Поиск заметок</string>
+    <string name="search">Поиск</string>
+    <string name="searchnotes">Поиск Заметок</string>
     <string name="add">add</string>
     <string name="back">back</string>
     <string name="time">17:21</string>
     <string name="date">30 мая</string>
+    <string name="text">text</string>
+    <string name="register_for_number">Регистрация по номеру</string>
 </resources>

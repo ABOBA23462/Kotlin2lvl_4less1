@@ -20,5 +20,21 @@
         android:id="@+id/noteAppFragment"
         android:name="com.example.kotlin2lvl_2less.ui.fragments.home.NoteAppFragment"
         android:label="fragment_note_app"
-        tools:layout="@layout/fragment_note_app" />
+        tools:layout="@layout/fragment_note_app" >
+        <action
+            android:id="@+id/action_noteAppFragment_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment" />
+        <action
+            android:id="@+id/action_noteAppFragment_to_onBoardFragment"
+            app:destination="@id/onBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="com.example.kotlin2lvl_2less.ui.fragments.home.detail.NoteDetailFragment"
+        android:label="fragment_note_detail"
+        tools:layout="@layout/fragment_note_detail" >
+        <action
+            android:id="@+id/action_noteDetailFragment_to_noteAppFragment"
+            app:destination="@id/noteAppFragment" />
+    </fragment>
 </navigation>

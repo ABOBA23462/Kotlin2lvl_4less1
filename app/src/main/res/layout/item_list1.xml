@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="60dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginHorizontal="20dp"
     android:layout_marginVertical="8dp"
-    android:background="@color/dark_grey2">
+    android:layout_marginStart="28dp"
+    android:id="@+id/item1"
+    android:layout_marginEnd="28dp"
+    android:backgroundTint="@color/dark_grey1"
+    android:background="@drawable/item_rounding">
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/item_note_titel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="text"
+        android:text="title"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginTop="13dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/item_note_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="description"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintStart_toStartOf="@id/item_note_titel"
+        app:layout_constraintTop_toTopOf="@id/item_note_titel"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
