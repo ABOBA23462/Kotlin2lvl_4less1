@@ -23,4 +23,5 @@
     <string name="date">30 мая</string>
     <string name="text">text</string>
     <string name="register_for_number">Регистрация по номеру</string>
+    <string name="Enter">Подтвердить</string>
 </resources>

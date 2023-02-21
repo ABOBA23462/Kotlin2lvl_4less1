@@ -46,7 +46,7 @@ class OnBoardFragment : Fragment() {
             val preferenceHelper = PreferenceHelper()
             preferenceHelper.unit(requireContext())
             preferenceHelper.onSaveOnBoardState = false
-            findNavController().navigate(R.id.action_onBoardFragment_to_noteAppFragment)
+            findNavController().navigate(R.id.action_onBoardFragment_to_singUpFragment)
         }
         viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {

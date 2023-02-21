@@ -10,12 +10,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kotlin2lvl_2less.App
 import com.example.kotlin2lvl_2less.R
 import com.example.kotlin2lvl_2less.databinding.FragmentNoteAppBinding
+import com.example.kotlin2lvl_2less.models.NoteModel
 import com.example.kotlin2lvl_2less.ui.adapter.NoteAppAdapter
 
 class NoteAppFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteAppBinding
-    private val noteAppAdapter = NoteAppAdapter()
+    private val noteAppAdapter = NoteAppAdapter(this::onItemClick)
+
+    private fun onItemClick(noteModel: NoteModel) {
+findNavController().navigate(NoteAppFragmentDirections.actionNoteAppFragmentToNoteDetailFragment(noteModel))
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,7 +45,6 @@ class NoteAppFragment : Fragment() {
     }
 
     private fun setupListener() {
-
         binding.btnAdd.setOnClickListener {
             findNavController().navigate(R.id.action_noteAppFragment_to_noteDetailFragment)
         }

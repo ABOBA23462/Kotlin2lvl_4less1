@@ -7,6 +7,8 @@ import androidx.room.PrimaryKey
 data class NoteModel(
     var title: String,
     var description: String
+//    var timeChange: String,
+//    val itemColor: String
 ) : java.io.Serializable{
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0

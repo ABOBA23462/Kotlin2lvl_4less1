@@ -1,15 +1,18 @@
 package com.example.kotlin2lvl_2less.ui.adapter
 
+import android.annotation.SuppressLint
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlin2lvl_2less.databinding.ItemList1Binding
 import com.example.kotlin2lvl_2less.models.NoteModel
 
-class NoteAppAdapter : RecyclerView.Adapter<NoteAppAdapter.NoteViewHolder>() {
+class NoteAppAdapter(val onItemClick: (noteModel: NoteModel) -> Unit) : RecyclerView.Adapter<NoteAppAdapter.NoteViewHolder>() {
 
     private var list: List<NoteModel> = ArrayList()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setList(list: List<NoteModel>){
         this.list = list
         notifyDataSetChanged()
@@ -18,9 +21,17 @@ class NoteAppAdapter : RecyclerView.Adapter<NoteAppAdapter.NoteViewHolder>() {
     inner class NoteViewHolder(private var binding: ItemList1Binding) :
         RecyclerView.ViewHolder(binding.root) {
 
+        init {
+            itemView.setOnClickListener {
+                onItemClick(list[adapterPosition])
+            }
+        }
+
         fun onBind(noteModel: NoteModel) {
             binding.itemNoteTitel.text = noteModel.title
-            binding.itemNoteDescription.text =  noteModel.description
+           binding.itemNoteDescription.text =  noteModel.description
+//            binding.itemClock.text = noteModel.timeChange
+//            binding.item1.setBackgroundColor(Color.parseColor(noteModel.itemColor))
         }
 
     }

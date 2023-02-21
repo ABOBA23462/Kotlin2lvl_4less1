@@ -11,10 +11,8 @@
         android:label="fragment_on_board"
         tools:layout="@layout/fragment_on_board">
         <action
-            android:id="@+id/action_onBoardFragment_to_noteAppFragment"
-            app:destination="@id/noteAppFragment"
-            app:popUpTo="@id/nav_graph.xml"
-            app:popUpToInclusive="true"/>
+            android:id="@+id/action_onBoardFragment_to_singUpFragment"
+            app:destination="@id/singUpFragment" />
     </fragment>
     <fragment
         android:id="@+id/noteAppFragment"
@@ -24,9 +22,7 @@
         <action
             android:id="@+id/action_noteAppFragment_to_noteDetailFragment"
             app:destination="@id/noteDetailFragment" />
-        <action
-            android:id="@+id/action_noteAppFragment_to_onBoardFragment"
-            app:destination="@id/onBoardFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/noteDetailFragment"
@@ -36,5 +32,19 @@
         <action
             android:id="@+id/action_noteDetailFragment_to_noteAppFragment"
             app:destination="@id/noteAppFragment" />
+        <argument
+            android:name="model"
+            app:argType="com.example.kotlin2lvl_2less.models.NoteModel" />
+    </fragment>
+    <fragment
+        android:id="@+id/singUpFragment"
+        android:name="com.example.kotlin2lvl_2less.ui.fragments.singup.SingUpFragment"
+        android:label="fragment_sing_up"
+        tools:layout="@layout/fragment_sing_up" >
+        <action
+            android:id="@+id/action_singUpFragment_to_noteAppFragment"
+            app:destination="@id/noteAppFragment"
+            app:popUpTo="@id/nav_graph.xml"
+            app:popUpToInclusive="true"/>
     </fragment>
 </navigation>
