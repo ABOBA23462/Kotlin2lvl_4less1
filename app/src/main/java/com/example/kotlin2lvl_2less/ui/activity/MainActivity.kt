@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun isShown() {
         preferenceHelper.unit(this)
-        if (!preferenceHelper.onSaveOnBoardState) {
+        if (!preferenceHelper.onSaveOnBoardState && !preferenceHelper.saveRegistration) {
             navController.navigate(R.id.noteAppFragment)
         } else {
             navController.navigate(R.id.onBoardFragment)

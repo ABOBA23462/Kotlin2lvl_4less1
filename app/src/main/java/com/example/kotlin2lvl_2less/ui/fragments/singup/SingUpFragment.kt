@@ -12,6 +12,7 @@ import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.example.kotlin2lvl_2less.R
 import com.example.kotlin2lvl_2less.databinding.FragmentSingUpBinding
+import com.example.kotlin2lvl_2less.utils.PreferenceHelper
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
@@ -46,12 +47,22 @@ class SingUpFragment : Fragment() {
 
     private fun setupListener() = with(binding) {
         btnGetcode.setOnClickListener {
-            startPhoneNumberVerification(etNumber.text.toString())
-            btnGetcode.isVisible = false
-            btnEnter.isVisible = true
+            if (etNumber.text.isEmpty()){
+                etNumber.error = "pls number"
+            }else {
+                startPhoneNumberVerification(etNumber.text.toString())
+                btnGetcode.isVisible = false
+                btnEnter.isVisible = true
+            }
         }
         btnEnter.setOnClickListener {
+            if (etNumber.text.isEmpty()) {
+                etNumber.error = "pls number"
+            }else{
             verifyPhoneNumberWithCode(storedVerificationId, etCode.text.toString())
+            val preferenceHelper = PreferenceHelper()
+            preferenceHelper.unit(requireContext())
+            preferenceHelper.saveRegistration = false}
         }
     }
 
