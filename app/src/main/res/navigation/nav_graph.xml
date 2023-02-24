@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-      android:id="@+id/nav_graph.xml"
+    android:id="@+id/nav_graph.xml"
     app:startDestination="@id/noteAppFragment">
 
     <fragment
@@ -18,7 +18,7 @@
         android:id="@+id/noteAppFragment"
         android:name="com.example.kotlin2lvl_2less.ui.fragments.home.NoteAppFragment"
         android:label="fragment_note_app"
-        tools:layout="@layout/fragment_note_app" >
+        tools:layout="@layout/fragment_note_app">
         <action
             android:id="@+id/action_noteAppFragment_to_noteDetailFragment"
             app:destination="@id/noteDetailFragment" />
@@ -28,7 +28,7 @@
         android:id="@+id/noteDetailFragment"
         android:name="com.example.kotlin2lvl_2less.ui.fragments.home.detail.NoteDetailFragment"
         android:label="fragment_note_detail"
-        tools:layout="@layout/fragment_note_detail" >
+        tools:layout="@layout/fragment_note_detail">
         <action
             android:id="@+id/action_noteDetailFragment_to_noteAppFragment"
             app:destination="@id/noteAppFragment" />
@@ -40,11 +40,11 @@
         android:id="@+id/singUpFragment"
         android:name="com.example.kotlin2lvl_2less.ui.fragments.singup.SingUpFragment"
         android:label="fragment_sing_up"
-        tools:layout="@layout/fragment_sing_up" >
+        tools:layout="@layout/fragment_sing_up">
         <action
             android:id="@+id/action_singUpFragment_to_noteAppFragment"
             app:destination="@id/noteAppFragment"
             app:popUpTo="@id/nav_graph.xml"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

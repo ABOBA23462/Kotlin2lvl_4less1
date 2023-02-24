@@ -14,11 +14,12 @@ import com.example.kotlin2lvl_2less.databinding.FragmentNoteDetailBinding
 import com.example.kotlin2lvl_2less.models.NoteModel
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
+import java.util.*
 
 class NoteDetailFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteDetailBinding
-
+    private var backgroundColor = "#1B1A1A"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,23 +33,48 @@ class NoteDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sendData()
+        setupListener()
+    }
+
+    private fun setupListener() {
+        binding.back.setOnClickListener {
+            findNavController().navigate(R.id.action_noteDetailFragment_to_noteAppFragment)
+        }
+
+        binding.cvOne.setOnClickListener {
+            backgroundColor = "#1E1E1E"
+        }
+
+        binding.cvTwo.setOnClickListener {
+            backgroundColor = "#EBE4C9"
+        }
+
+        binding.cvThird.setOnClickListener {
+            backgroundColor = "#571818"
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun sendData() = with(binding) {
-
         val current = LocalDateTime.now()
-        val formatter = DateTimeFormatter.ofPattern("dd MMMM HH:mm")
+        val formatter = DateTimeFormatter.ofPattern("dd.MM")
         val date = current.format(formatter)
         binding.date.text = date.toString()
 
         btnReady.setOnClickListener {
-            if (detailTitle.text.isEmpty() || detailDescription.text.isEmpty()) {
+            if (detailTitle.text.isNotEmpty() || detailDescription.text.isNotEmpty()) {
                 val title = detailTitle.text.toString()
                 val description = detailDescription.text.toString()
-                val data = binding.date.text.toString()
-                App().getInstance()?.noteDao()?.insert(NoteModel(title, description, data))
-                findNavController().navigate(R.id.action_noteDetailFragment_to_noteAppFragment)
+                val dateItem = binding.date.text.toString()
+                App().getInstance()?.noteDao()?.insert(
+                    NoteModel(
+                        title,
+                        description,
+                        itemColor = backgroundColor,
+                        itemDate = dateItem
+                    )
+                )
+                findNavController().navigateUp()
             }
         }
     }

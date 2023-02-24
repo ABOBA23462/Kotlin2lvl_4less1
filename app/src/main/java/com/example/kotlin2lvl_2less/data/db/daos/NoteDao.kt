@@ -1,10 +1,13 @@
 package com.example.kotlin2lvl_2less.data.db.daos
 
 import androidx.lifecycle.LiveData
-import androidx.room.*
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
 import com.example.kotlin2lvl_2less.models.NoteModel
 
-@Dao
+@androidx.room.Dao
 interface NoteDao {
 
     @Query("SELECT * FROM note")

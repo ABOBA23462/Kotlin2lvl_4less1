@@ -29,7 +29,6 @@
         android:textStyle="bold" />
 
 
-
     <TextClock
         android:id="@+id/time"
         android:layout_width="wrap_content"
@@ -40,7 +39,7 @@
         android:text="@string/time"
         android:textColor="@color/light"
         android:textSize="14sp"
-        tools:ignore="TextContrastCheck" />
+        tools:ignore="RelativeOverlap,TextContrastCheck" />
 
     <TextView
         android:id="@+id/btn_ready"
@@ -49,9 +48,10 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="18dp"
         android:layout_marginEnd="24dp"
-        android:text="Готово"
+        android:text="@string/ready"
         android:textColor="@color/orange"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        tools:ignore="RelativeOverlap" />
 
     <EditText
         android:id="@+id/detail_title"
@@ -60,12 +60,14 @@
         android:layout_below="@id/back"
         android:layout_alignStart="@id/back"
         android:layout_marginTop="23dp"
+        android:autofillHints=""
         android:backgroundTint="@color/transparent"
-        android:hint="Заголовок"
+        android:hint="@string/name"
+        android:inputType="text"
         android:textColor="@color/white"
         android:textColorHint="@color/light_grey1"
         android:textSize="18sp"
-        tools:ignore="DuplicateClickableBoundsCheck" />
+        tools:ignore="DuplicateClickableBoundsCheck,VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/detail_description"
@@ -73,27 +75,32 @@
         android:layout_height="48dp"
         android:layout_below="@id/detail_title"
         android:layout_alignStart="@id/detail_title"
+        android:layout_marginEnd="10dp"
         android:backgroundTint="@color/transparent"
-        android:hint="Начните ввод"
+        android:hint="@string/starttowrite"
+        android:importantForAutofill="no"
+        android:inputType="text"
         android:textColor="@color/white"
         android:textColorHint="@color/light_grey1"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        tools:ignore="VisualLintTextFieldSize" />
 
 
     <RadioButton
         android:id="@+id/cv_one"
         android:layout_width="80dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_alignBottom="@+id/cv_two"
         android:layout_marginEnd="30dp"
         android:layout_toStartOf="@+id/cv_two"
         android:background="@color/dark_grey1"
-        app:cardCornerRadius="16dp" />
+        app:cardCornerRadius="16dp"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <RadioButton
         android:id="@+id/cv_two"
         android:layout_width="80dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="30dp"
@@ -103,7 +110,7 @@
     <RadioButton
         android:id="@+id/cv_third"
         android:layout_width="80dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_alignBottom="@+id/cv_two"
         android:layout_marginStart="60dp"
         android:layout_toEndOf="@+id/cv_two"

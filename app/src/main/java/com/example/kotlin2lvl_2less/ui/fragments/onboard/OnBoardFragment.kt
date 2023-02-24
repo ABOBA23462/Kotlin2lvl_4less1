@@ -1,4 +1,5 @@
 package com.example.kotlin2lvl_2less.ui.fragments.onboard
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater

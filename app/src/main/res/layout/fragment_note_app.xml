@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/dark_grey2"
     android:layout_height="match_parent"
+    android:background="@color/dark_grey2"
     tools:context=".ui.fragments.home.NoteAppFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -12,51 +12,62 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/search_bar_text_view"
-        android:layout_marginTop="11dp"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="11dp" />
 
     <com.google.android.material.card.MaterialCardView
-    android:id="@+id/cv_actionbar"
-    android:layout_width="match_parent"
-    android:backgroundTint="@color/dark_grey1"
-    android:layout_height="50dp">
+        android:id="@+id/cv_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/dark_grey1">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="16sp"
-        android:textColor="@color/white"
-        android:text="@string/заметки"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/заметки"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
-    <ImageView
-        android:id="@+id/menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/menu"
-        android:layout_gravity="center_vertical"
-        android:layout_marginStart="20dp"
-        android:contentDescription="@string/menu" />
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:contentDescription="@string/menu"
+            android:src="@drawable/menu" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/shape1"
-        android:layout_gravity="center_vertical|end"
-        android:layout_marginEnd="20dp"
-        android:contentDescription="@string/menu2" />
-    
-</com.google.android.material.card.MaterialCardView>
+        <ImageView
+            android:id="@+id/item_grid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@string/menu2"
+            android:src="@drawable/shape1" />
+
+        <ImageView
+            android:id="@+id/item_linear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginEnd="20dp"
+            android:contentDescription="@string/menu2"
+            android:src="@drawable/shape1"
+            android:visibility="gone" />
+
+    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/search_bar_text_view"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_below="@id/cv_actionbar"
         android:layout_marginHorizontal="28dp"
-        app:cardCornerRadius="25dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/dark_grey1"
-        android:layout_below="@id/cv_actionbar">
+        app:cardCornerRadius="25dp">
 
         <EditText
             android:layout_width="wrap_content"

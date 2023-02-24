@@ -27,7 +27,6 @@ class SingUpFragment : Fragment() {
 
     private lateinit var binding: FragmentSingUpBinding
     private var auth: FirebaseAuth? = null
-
     private var storedVerificationId: String? = ""
     private lateinit var resendingToken: PhoneAuthProvider.ForceResendingToken
 
@@ -47,32 +46,34 @@ class SingUpFragment : Fragment() {
 
     private fun setupListener() = with(binding) {
         btnGetcode.setOnClickListener {
-            if (etNumber.text.isEmpty()){
+            if (etNumber.text.isEmpty()) {
                 etNumber.error = "pls number"
-            }else {
+            } else {
                 startPhoneNumberVerification(etNumber.text.toString())
                 btnGetcode.isVisible = false
                 btnEnter.isVisible = true
             }
         }
+
         btnEnter.setOnClickListener {
             if (etNumber.text.isEmpty()) {
                 etNumber.error = "pls number"
-            }else{
-            verifyPhoneNumberWithCode(storedVerificationId, etCode.text.toString())
-            val preferenceHelper = PreferenceHelper()
-            preferenceHelper.unit(requireContext())
-            preferenceHelper.saveRegistration = false}
+            } else {
+                verifyPhoneNumberWithCode(storedVerificationId, etCode.text.toString())
+                val preferenceHelper = PreferenceHelper()
+                preferenceHelper.unit(requireContext())
+                preferenceHelper.saveRegistration = false
+            }
         }
     }
 
-    private fun singInWithPhoneAuthCredential(credential: PhoneAuthCredential){
+    private fun singInWithPhoneAuthCredential(credential: PhoneAuthCredential) {
         auth?.signInWithCredential(credential)
-            ?.addOnCompleteListener(requireActivity()){task ->
-                if (task.isSuccessful){
+            ?.addOnCompleteListener(requireActivity()) { task ->
+                if (task.isSuccessful) {
                     findNavController().navigate(R.id.noteAppFragment)
-                }else{
-                    if (task.exception is FirebaseAuthInvalidCredentialsException){
+                } else {
+                    if (task.exception is FirebaseAuthInvalidCredentialsException) {
                         Toast.makeText(requireContext(), "Registration is not", Toast.LENGTH_SHORT)
                             .show()
                     }
@@ -93,11 +94,10 @@ class SingUpFragment : Fragment() {
             .setActivity(requireActivity())
             .setCallbacks(callback)
             .build()
-            PhoneAuthProvider.verifyPhoneNumber(options)
+        PhoneAuthProvider.verifyPhoneNumber(options)
     }
 
-    private var callback = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
-
+    private var callback = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         override fun onVerificationCompleted(credential: PhoneAuthCredential) {
             singInWithPhoneAuthCredential(credential)
         }
@@ -108,10 +108,10 @@ class SingUpFragment : Fragment() {
 
         override fun onCodeSent(
             verificationId: String,
-            token: PhoneAuthProvider.ForceResendingToken){
+            token: PhoneAuthProvider.ForceResendingToken
+        ) {
             storedVerificationId = verificationId
             resendingToken = token
         }
-
     }
 }

@@ -24,4 +24,9 @@
     <string name="text">text</string>
     <string name="register_for_number">Регистрация по номеру</string>
     <string name="Enter">Подтвердить</string>
+    <string name="title">title</string>
+    <string name="description">description</string>
+    <string name="ready">Готово</string>
+    <string name="name">Заголовок</string>
+    <string name="starttowrite">Начните ввод</string>
 </resources>
