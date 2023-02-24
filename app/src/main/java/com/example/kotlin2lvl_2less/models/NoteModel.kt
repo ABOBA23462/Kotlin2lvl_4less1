@@ -6,8 +6,8 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "note")
 data class NoteModel(
     var title: String,
-    var description: String
-//    var timeChange: String,
+    var description: String,
+   var itemDate: String,
 //    val itemColor: String
 ) : java.io.Serializable{
     @PrimaryKey(autoGenerate = true)
