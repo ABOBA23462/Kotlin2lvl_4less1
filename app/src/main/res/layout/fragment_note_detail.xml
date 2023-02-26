@@ -7,6 +7,7 @@
     android:background="@color/dark_grey2"
     tools:context=".ui.fragments.home.detail.NoteDetailFragment">
 
+
     <ImageView
         android:id="@+id/back"
         android:layout_width="wrap_content"
@@ -85,35 +86,76 @@
         android:textSize="15sp"
         tools:ignore="VisualLintTextFieldSize" />
 
-
-    <RadioButton
+    <Button
         android:id="@+id/cv_one"
-        android:layout_width="80dp"
+        android:layout_width="90dp"
         android:layout_height="48dp"
         android:layout_alignBottom="@+id/cv_two"
-        android:layout_marginEnd="30dp"
+        android:layout_marginEnd="20dp"
         android:layout_toStartOf="@+id/cv_two"
-        android:background="@color/dark_grey1"
+        android:background="@drawable/rounder_item"
+        android:backgroundTint="@color/grey"
         app:cardCornerRadius="16dp"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
-    <RadioButton
+    <Button
         android:id="@+id/cv_two"
-        android:layout_width="80dp"
+        android:layout_width="90dp"
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/cream"
+        android:background="@drawable/rounder_item"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="34dp"
-        app:cardCornerRadius="16dp" />
+        android:layout_marginBottom="34dp" />
 
-    <RadioButton
+    <Button
         android:id="@+id/cv_third"
-        android:layout_width="80dp"
+        android:layout_width="90dp"
         android:layout_height="48dp"
         android:layout_alignBottom="@+id/cv_two"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="50dp"
         android:layout_toEndOf="@+id/cv_two"
-        android:background="@color/scarlet"
-        app:cardCornerRadius="16dp" />
+        android:background="@drawable/rounder_item"
+        android:backgroundTint="@color/scarlet" />
+
+    <View
+        android:id="@+id/first_ind"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_below="@id/cv_one"
+        android:layout_alignStart="@+id/cv_one"
+        android:layout_alignEnd="@+id/cv_one"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="40dp"
+        android:visibility="invisible"
+        android:background="@drawable/rounder"
+        android:backgroundTint="@color/orange" />
+
+    <View
+        android:id="@+id/second_ind"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@drawable/rounder"
+        android:backgroundTint="@color/orange"
+        android:layout_below="@id/cv_two"
+        android:layout_marginTop="-23dp"
+        android:visibility="invisible"
+        android:layout_centerHorizontal="true"/>
+
+    <View
+        android:id="@+id/third_ind"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_below="@id/cv_third"
+        android:layout_alignStart="@+id/cv_third"
+        android:layout_alignEnd="@+id/cv_third"
+        android:layout_marginStart="40dp"
+        android:visibility="invisible"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/rounder"
+        android:backgroundTint="@color/orange" />
+
 </RelativeLayout>

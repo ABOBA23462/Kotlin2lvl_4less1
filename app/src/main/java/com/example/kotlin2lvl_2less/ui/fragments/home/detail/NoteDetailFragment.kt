@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.kotlin2lvl_2less.App
@@ -36,20 +37,29 @@ class NoteDetailFragment : Fragment() {
         setupListener()
     }
 
-    private fun setupListener() {
-        binding.back.setOnClickListener {
+    private fun setupListener() = with(binding) {
+        back.setOnClickListener {
             findNavController().navigate(R.id.action_noteDetailFragment_to_noteAppFragment)
         }
 
-        binding.cvOne.setOnClickListener {
+        cvOne.setOnClickListener {
+            firstInd.isVisible = true
+            secondInd.isVisible = false
+            thirdInd.isVisible = false
             backgroundColor = "#1E1E1E"
         }
 
-        binding.cvTwo.setOnClickListener {
+        cvTwo.setOnClickListener {
+            firstInd.isVisible = false
+            secondInd.isVisible = true
+            thirdInd.isVisible = false
             backgroundColor = "#EBE4C9"
         }
 
-        binding.cvThird.setOnClickListener {
+        cvThird.setOnClickListener {
+            firstInd.isVisible = false
+            secondInd.isVisible = false
+            thirdInd.isVisible = true
             backgroundColor = "#571818"
         }
     }

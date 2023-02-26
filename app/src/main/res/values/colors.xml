@@ -17,4 +17,6 @@
     <color name="light_grey4">#505050</color>
     <color name="scarlet">#571818</color>
     <color name="transperent">#00000000</color>
+    <color name="grey">#1E1E1E</color>
+    <color name="cream">#EBE4C9</color>
 </resources>

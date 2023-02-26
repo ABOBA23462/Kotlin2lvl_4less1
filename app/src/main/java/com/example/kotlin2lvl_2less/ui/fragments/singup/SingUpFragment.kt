@@ -47,7 +47,7 @@ class SingUpFragment : Fragment() {
     private fun setupListener() = with(binding) {
         btnGetcode.setOnClickListener {
             if (etNumber.text.isEmpty()) {
-                etNumber.error = "pls number"
+                etNumber.error = "Введите номер телефона"
             } else {
                 startPhoneNumberVerification(etNumber.text.toString())
                 btnGetcode.isVisible = false
@@ -56,8 +56,8 @@ class SingUpFragment : Fragment() {
         }
 
         btnEnter.setOnClickListener {
-            if (etNumber.text.isEmpty()) {
-                etNumber.error = "pls number"
+            if (etCode.text.isEmpty()) {
+                etCode.error = "Введите код"
             } else {
                 verifyPhoneNumberWithCode(storedVerificationId, etCode.text.toString())
                 val preferenceHelper = PreferenceHelper()
