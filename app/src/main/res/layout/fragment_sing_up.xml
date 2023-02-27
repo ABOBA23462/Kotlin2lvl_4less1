@@ -43,7 +43,7 @@
             android:autofillHints=""
             android:backgroundTint="@color/transparent"
             android:hint="@string/number"
-            android:inputType="number"
+            android:inputType="phone"
             android:textColor="@color/light_grey1"
             android:textColorHint="#B1B1B1"
             tools:ignore="TouchTargetSizeCheck,TextContrastCheck" />

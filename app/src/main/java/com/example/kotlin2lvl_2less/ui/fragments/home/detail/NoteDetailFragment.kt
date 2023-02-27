@@ -43,31 +43,31 @@ class NoteDetailFragment : Fragment() {
         }
 
         cvOne.setOnClickListener {
+            backgroundColor = "#1E1E1E"
             firstInd.isVisible = true
             secondInd.isVisible = false
             thirdInd.isVisible = false
-            backgroundColor = "#1E1E1E"
         }
 
         cvTwo.setOnClickListener {
+            backgroundColor = "#EBE4C9"
             firstInd.isVisible = false
             secondInd.isVisible = true
             thirdInd.isVisible = false
-            backgroundColor = "#EBE4C9"
         }
 
         cvThird.setOnClickListener {
+            backgroundColor = "#571818"
             firstInd.isVisible = false
             secondInd.isVisible = false
             thirdInd.isVisible = true
-            backgroundColor = "#571818"
         }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
     private fun sendData() = with(binding) {
         val current = LocalDateTime.now()
-        val formatter = DateTimeFormatter.ofPattern("dd.MM")
+        val formatter = DateTimeFormatter.ofPattern("dd MMMM")
         val date = current.format(formatter)
         binding.date.text = date.toString()
 

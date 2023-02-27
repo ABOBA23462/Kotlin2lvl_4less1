@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlin2lvl_2less.databinding.ItemList1Binding
 import com.example.kotlin2lvl_2less.models.NoteModel
 
-@Suppress("DEPRECATION")
 class NoteAppAdapter(val onItemClick: (noteModel: NoteModel) -> Unit) :
     RecyclerView.Adapter<NoteAppAdapter.NoteViewHolder>() {
 
@@ -22,12 +21,6 @@ class NoteAppAdapter(val onItemClick: (noteModel: NoteModel) -> Unit) :
 
     inner class NoteViewHolder(private var binding: ItemList1Binding) :
         RecyclerView.ViewHolder(binding.root) {
-        init {
-            itemView.setOnLongClickListener {
-                onItemClick(list[adapterPosition])
-                true
-            }
-        }
 
         fun onBind(noteModel: NoteModel) {
             binding.itemNoteTitel.text = noteModel.title
@@ -53,5 +46,9 @@ class NoteAppAdapter(val onItemClick: (noteModel: NoteModel) -> Unit) :
 
     override fun onBindViewHolder(holder: NoteViewHolder, position: Int) {
         holder.onBind(list[position])
+        holder.itemView.setOnLongClickListener {
+            onItemClick(list[position])
+            true
+        }
     }
 }
