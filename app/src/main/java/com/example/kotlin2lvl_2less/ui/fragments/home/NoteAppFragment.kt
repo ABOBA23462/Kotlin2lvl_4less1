@@ -2,10 +2,13 @@ package com.example.kotlin2lvl_2less.ui.fragments.home
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -13,13 +16,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.kotlin2lvl_2less.App
 import com.example.kotlin2lvl_2less.R
 import com.example.kotlin2lvl_2less.databinding.FragmentNoteAppBinding
+import com.example.kotlin2lvl_2less.databinding.ItemList1Binding
+import com.example.kotlin2lvl_2less.extensions.onChange
 import com.example.kotlin2lvl_2less.models.NoteModel
 import com.example.kotlin2lvl_2less.ui.adapter.NoteAppAdapter
+import java.util.*
+import kotlin.collections.ArrayList
 
 class NoteAppFragment : Fragment() {
 
     private lateinit var binding: FragmentNoteAppBinding
     private val noteAppAdapter = NoteAppAdapter(this::onItemClick)
+//   private var listOfDate: ArrayList<String> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -72,12 +80,30 @@ class NoteAppFragment : Fragment() {
     private fun onItemClick(noteModel: NoteModel) {
         val builder = AlertDialog.Builder(requireContext())
         builder.setTitle("Delete?")
-        builder.setPositiveButton("Delete") { dialog, _ ->
+        builder.setPositiveButton("Delete") { _, _ ->
             App.appDatabase?.noteDao()?.delete(noteModel)
         }
-        builder.setNegativeButton("Cancel") { dialog, id ->
+        builder.setNegativeButton("Cancel") { dialog, _ ->
             dialog.cancel()
         }
         builder.show()
     }
+//    private fun searchDate() {
+//        binding.etSearch.onChange {
+//            filter(it)
+//        }
+//    }
+
+//    private fun filter(text: String) {
+//        val filteredList: ArrayList<String> = ArrayList()
+//        for (item in listOfDate) {
+//            if (item.dropLast(4).lowercase(Locale.getDefault())
+//                    .contains(text.lowercase(Locale.getDefault()))
+//            ) {
+//                filteredList.add(item)
+//            }
+//        }
+//        noteAppAdapter.setList()
+//    }
+
 }

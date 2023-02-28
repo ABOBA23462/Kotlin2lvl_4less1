@@ -135,6 +135,4 @@
         android:layout_marginTop="20dp"
         android:text="@string/send_again"
         android:textColor="@color/orange" />
-
-
 </RelativeLayout>

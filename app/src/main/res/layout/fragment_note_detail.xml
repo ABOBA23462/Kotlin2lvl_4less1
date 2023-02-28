@@ -7,7 +7,6 @@
     android:background="@color/dark_grey2"
     tools:context=".ui.fragments.home.detail.NoteDetailFragment">
 
-
     <ImageView
         android:id="@+id/back"
         android:layout_width="wrap_content"
@@ -104,10 +103,10 @@
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/cream"
-        android:background="@drawable/rounder_item"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="34dp" />
+        android:layout_marginBottom="34dp"
+        android:background="@drawable/rounder_item"
+        android:backgroundTint="@color/cream" />
 
     <Button
         android:id="@+id/cv_third"
@@ -129,20 +128,20 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="11dp"
         android:layout_marginEnd="40dp"
-        android:visibility="invisible"
         android:background="@drawable/rounder"
-        android:backgroundTint="@color/orange" />
+        android:backgroundTint="@color/orange"
+        android:visibility="invisible" />
 
     <View
         android:id="@+id/second_ind"
         android:layout_width="10dp"
         android:layout_height="10dp"
+        android:layout_below="@id/cv_two"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-23dp"
         android:background="@drawable/rounder"
         android:backgroundTint="@color/orange"
-        android:layout_below="@id/cv_two"
-        android:layout_marginTop="-23dp"
-        android:visibility="invisible"
-        android:layout_centerHorizontal="true"/>
+        android:visibility="invisible" />
 
     <View
         android:id="@+id/third_ind"
@@ -152,10 +151,10 @@
         android:layout_alignStart="@+id/cv_third"
         android:layout_alignEnd="@+id/cv_third"
         android:layout_marginStart="40dp"
-        android:visibility="invisible"
         android:layout_marginTop="11dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/rounder"
-        android:backgroundTint="@color/orange" />
+        android:backgroundTint="@color/orange"
+        android:visibility="invisible" />
 
 </RelativeLayout>
